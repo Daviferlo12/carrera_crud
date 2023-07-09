@@ -51,7 +51,7 @@ public class form_corredor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "CORREDORES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(153, 153, 153))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CORREDORES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(153, 153, 153))); // NOI18N
 
         table_corredores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -80,7 +80,7 @@ public class form_corredor extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Datos Corredores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(153, 153, 153))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Corredores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(153, 153, 153))); // NOI18N
 
         jLabel1.setText("Dorsal:");
 
@@ -91,6 +91,11 @@ public class form_corredor extends javax.swing.JFrame {
         input_dorsal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_dorsalActionPerformed(evt);
+            }
+        });
+        input_dorsal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                input_dorsalKeyTyped(evt);
             }
         });
 
@@ -207,6 +212,23 @@ public class form_corredor extends javax.swing.JFrame {
     private void combo_carreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_carreraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_combo_carreraActionPerformed
+
+    private void input_dorsalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_dorsalKeyTyped
+        int key = evt.getKeyChar();
+    
+        boolean numero = key >= 48 && key <= 57;
+        
+        if (!numero) { 
+                evt.consume ();
+                
+      }
+        if (input_dorsal.getText().trim().length()== 3){
+            evt.consume();
+        }        
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_input_dorsalKeyTyped
 
     /**
      * @param args the command line arguments
