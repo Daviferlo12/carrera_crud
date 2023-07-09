@@ -4,6 +4,8 @@
  */
 package com.mycompany.cerrera_test_1;
 
+import conection.c_conexion;
+
 /**
  *
  * @author davif
