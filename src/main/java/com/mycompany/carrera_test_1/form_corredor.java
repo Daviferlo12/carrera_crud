@@ -24,6 +24,8 @@ public class form_corredor extends javax.swing.JFrame {
     public form_corredor() {
         initComponents();
         c_combo.rellenar_combo("equipos", "marca_patro", combo_equipo);
+        
+        c_combo.rellenar_combo_SinRepetir("race", "nombre", combo_carrera);
     }
 
     /**

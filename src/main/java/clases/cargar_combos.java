@@ -36,4 +36,28 @@ public class cargar_combos {
         }
     }
     
+    
+    
+    
+    // Rellenar combo datos sin repetir
+    
+    public void rellenar_combo_SinRepetir(String table, String valor, JComboBox combo){
+        String query = "SELECT DISTINCT " + valor + " FROM " + table + ";";
+        
+        Statement st;
+        c_conexion cn = new c_conexion();
+        Connection conection = cn.establishConnection();
+        
+        try {
+            st = conection.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next()){
+            
+                combo.addItem(rs.getString(valor));
+                
+            }
+        } catch (Exception e) {
+        }
+    }
+    
 }
