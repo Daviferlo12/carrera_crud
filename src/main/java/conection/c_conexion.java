@@ -32,10 +32,10 @@ public class c_conexion {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             conectar = DriverManager.getConnection(chain, user, pass);
-            //System.err.println("Conexion establecida..");
+            System.err.println("Conexion establecida..");
             
         }catch(Exception e){
-            //JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos, error: " + e.toString());
+            JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos, error: " + e.toString());
         }
         
         return conectar;

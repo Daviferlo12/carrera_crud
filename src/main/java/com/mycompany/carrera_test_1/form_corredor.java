@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.carrera_test_1;
 
 import clases.cargar_combos;
@@ -59,7 +55,7 @@ public class form_corredor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "CORREDORES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(153, 153, 153))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CORREDORES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(153, 153, 153))); // NOI18N
 
         table_corredores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -88,7 +84,7 @@ public class form_corredor extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Datos Corredores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(153, 153, 153))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Corredores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(153, 153, 153))); // NOI18N
 
         jLabel1.setText("Dorsal:");
 
@@ -227,8 +223,7 @@ public class form_corredor extends javax.swing.JFrame {
     }//GEN-LAST:event_combo_carreraActionPerformed
 
     private void input_dorsalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_dorsalKeyTyped
-        // TODO add your handling code here:
-               int key = evt.getKeyChar();
+        int key = evt.getKeyChar();
     
         boolean numero = key >= 48 && key <= 57;
         
@@ -246,7 +241,7 @@ public class form_corredor extends javax.swing.JFrame {
         cls_corredores corredor = new cls_corredores();
         corredor.InsertarCorredor(input_dorsal, input_full_name, combo_nacionalidad, combo_equipo);
     }//GEN-LAST:event_btn_guardarActionPerformed
-
+      
     /**
      * @param args the command line arguments
      */
