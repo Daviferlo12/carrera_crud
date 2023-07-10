@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package conection;
 
 import java.sql.Connection;
@@ -17,7 +14,7 @@ public class c_conexion {
     Connection conectar = null;
     
     String user = "root";
-    String pass = "admin123";
+    String pass = "";
     String db = "carrera";
     String ip = "localhost";
     String port = "3306";
