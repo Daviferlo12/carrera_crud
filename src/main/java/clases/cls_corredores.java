@@ -71,8 +71,6 @@ public class cls_corredores {
             
             cs.execute();
             
-            JOptionPane.showMessageDialog(null, "Se insertaron los datos correctamente");
-            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No se insertaron los datos correctamente, ERROR: "+ e.toString());
         }
