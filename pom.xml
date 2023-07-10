@@ -16,7 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
-        <exec.mainClass>com.mycompany.cerrera_test_1.Cerrera_test_1</exec.mainClass>
+        <exec.mainClass>com.mycompany.carrera_test_1.Carrera_test_1</exec.mainClass>
     </properties>
     <name>carrera_test_1</name>
 </project>

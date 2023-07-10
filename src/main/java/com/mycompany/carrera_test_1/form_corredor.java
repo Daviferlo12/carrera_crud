@@ -2,26 +2,32 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.cerrera_test_1;
+package com.mycompany.carrera_test_1;
 
+import clases.cargar_combos;
+import clases.cls_corredores;
 import conection.c_conexion;
+import java.sql.Connection;
+import javax.swing.JComboBox;
 
 /**
  *
  * @author davif
  */
 public class form_corredor extends javax.swing.JFrame {
-
-    /**
-     * Creates new form form_corredor
-     */
+    
+    // INSTANCIA DE CONEXION
+    c_conexion conexion = new c_conexion();
+    Connection cn = conexion.establishConnection();
+    
+    
+    //METODO CARGAR DATA COMBOS
+    cargar_combos c_combo = new cargar_combos();
+    
+    
     public form_corredor() {
         initComponents();
-        
-        c_conexion conexion = new c_conexion();
-        
-        conexion.establishConnection();
-        
+        c_combo.rellenar_combo("equipos", "marca_patro", combo_equipo);
     }
 
     /**
@@ -95,6 +101,11 @@ public class form_corredor extends javax.swing.JFrame {
                 input_dorsalActionPerformed(evt);
             }
         });
+        input_dorsal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                input_dorsalKeyTyped(evt);
+            }
+        });
 
         combo_nacionalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "afgano", "alemán", "árabe", "argentino", "australiano", "belga", "boliviano", "brasileño", "camboyano", "canadiense", "chileno", "chino", "colombiano", "coreano", "costarricense", "cubano", "danés", "ecuatoriano", "egipcio", "salvadoreño", "escocés", "español", "estadounidense", "estonio", "etiope", "filipino", "finlandés", "francés", "galés", "griego", "guatemalteco", "haitiano", "holandés", "hondureño", "indonés", "inglés", "iraquí", "iraní", "irlandés", "israelí", "italiano", "japonés", "jordano", "laosiano", "letón", "letonés", "malayo", "marroquí", "mexicano", "nicaragüense", "noruego", "neozelandés", "panameño", "paraguayo", "peruano", "polaco", "portugués", "puertorriqueño", "dominicano", "rumano", "ruso", "sueco", "suizo", "tailandés", "taiwanes", "turco", "ucraniano", "uruguayo", "venezolano", "vietnamita" }));
 
@@ -109,6 +120,11 @@ public class form_corredor extends javax.swing.JFrame {
         });
 
         btn_guardar.setText("Guardar");
+        btn_guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guardarActionPerformed(evt);
+            }
+        });
 
         btn_modificar.setText("Modificar");
 
@@ -210,6 +226,27 @@ public class form_corredor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_combo_carreraActionPerformed
 
+    private void input_dorsalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_dorsalKeyTyped
+        // TODO add your handling code here:
+               int key = evt.getKeyChar();
+    
+        boolean numero = key >= 48 && key <= 57;
+        
+        if (!numero) { 
+            evt.consume ();
+        }
+        
+        if (input_dorsal.getText().trim().length()== 3){
+            evt.consume();
+        }   
+    }//GEN-LAST:event_input_dorsalKeyTyped
+
+    private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
+        // TODO add your handling code here:
+        cls_corredores corredor = new cls_corredores();
+        corredor.InsertarCorredor(input_dorsal, input_full_name, combo_nacionalidad, combo_equipo);
+    }//GEN-LAST:event_btn_guardarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -264,4 +301,5 @@ public class form_corredor extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable table_corredores;
     // End of variables declaration//GEN-END:variables
+
 }

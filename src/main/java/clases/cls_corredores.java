@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package clases;
 
 import conection.c_conexion;
@@ -53,12 +49,12 @@ public class cls_corredores {
         this.equipo = equipo;
     }
     
-    public void InsertarCorredor(JTextField paramDorsal, JTextField paramNombre, JTextField paramNacionalidad, JComboBox combo){
+    public void InsertarCorredor(JTextField paramDorsal, JTextField paramNombre, JComboBox paramNacionalidad, JComboBox combo){
         
         setDorsal(Integer.parseInt(paramDorsal.getText()));
         setNombre(paramNombre.getText());
-        setNacionalidad(paramNacionalidad.getText().toString());
-        setEquipo(combo.getSelectedIndex());
+        setNacionalidad(paramNacionalidad.getSelectedItem().toString());
+        setEquipo(combo.getSelectedIndex() + 1);
         
         c_conexion conexion = new c_conexion();
         
@@ -80,8 +76,6 @@ public class cls_corredores {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No se insertaron los datos correctamente, ERROR: "+ e.toString());
         }
-        
-        
     }
     
 }
