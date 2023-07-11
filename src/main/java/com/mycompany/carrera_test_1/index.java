@@ -36,14 +36,14 @@ public class index extends javax.swing.JFrame {
         icono = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        menu_Corredores = new javax.swing.JMenuItem();
+        menu_carreras = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 153));
 
         btn_corredores.setText("CORREDORES");
-        btn_corredores.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 255), new java.awt.Color(51, 0, 102), new java.awt.Color(204, 255, 0), new java.awt.Color(102, 0, 102)));
+        btn_corredores.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 255), new java.awt.Color(102, 0, 153), new java.awt.Color(204, 255, 0), new java.awt.Color(102, 0, 102)));
         btn_corredores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_corredoresActionPerformed(evt);
@@ -51,7 +51,7 @@ public class index extends javax.swing.JFrame {
         });
 
         btn_carreras.setText("CARRERAS");
-        btn_carreras.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 255), new java.awt.Color(102, 0, 102), new java.awt.Color(153, 0, 204), new java.awt.Color(255, 255, 0)));
+        btn_carreras.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 255), new java.awt.Color(102, 0, 102), new java.awt.Color(255, 255, 0), new java.awt.Color(102, 0, 102)));
         btn_carreras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_carrerasActionPerformed(evt);
@@ -62,16 +62,21 @@ public class index extends javax.swing.JFrame {
 
         jMenu1.setText("Ver");
 
-        jMenuItem1.setText("Corredores");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        menu_Corredores.setText("Corredores");
+        menu_Corredores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                menu_CorredoresActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(menu_Corredores);
 
-        jMenuItem2.setText("Carrera");
-        jMenu1.add(jMenuItem2);
+        menu_carreras.setText("Carrera");
+        menu_carreras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_carrerasActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menu_carreras);
 
         jMenuBar1.add(jMenu1);
 
@@ -108,9 +113,12 @@ public class index extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void menu_CorredoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_CorredoresActionPerformed
+        
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+            form_corredor  corredor = new form_corredor ();
+            corredor.setVisible(true);
+    }//GEN-LAST:event_menu_CorredoresActionPerformed
 
     private void btn_corredoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_corredoresActionPerformed
             // TODO add your handling code here:
@@ -124,6 +132,12 @@ public class index extends javax.swing.JFrame {
         form_carreras  carrera = new form_carreras ();
         carrera.setVisible(true);
     }//GEN-LAST:event_btn_carrerasActionPerformed
+
+    private void menu_carrerasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_carrerasActionPerformed
+        // TODO add your handling code here:
+        form_carreras  carrera = new form_carreras ();
+        carrera.setVisible(true);
+    }//GEN-LAST:event_menu_carrerasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,7 +180,7 @@ public class index extends javax.swing.JFrame {
     private javax.swing.JLabel icono;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem menu_Corredores;
+    private javax.swing.JMenuItem menu_carreras;
     // End of variables declaration//GEN-END:variables
 }

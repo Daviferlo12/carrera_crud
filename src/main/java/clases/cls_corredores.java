@@ -76,6 +76,7 @@ public class cls_corredores {
             cs.setInt(4, getEquipo());
             
             cs.execute();
+            JOptionPane.showMessageDialog(null, "Se guardo Correctamente");
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No se insertaron los datos correctamente, ERROR: "+ e.toString());

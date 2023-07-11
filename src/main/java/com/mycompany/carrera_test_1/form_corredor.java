@@ -29,7 +29,6 @@ public class form_corredor extends javax.swing.JFrame {
         c_combo.rellenar_combo("equipos", "marca_patro", combo_equipo);
         corredores.mostrar_corredores(table_corredores);
         //input_dorsal.setEnabled(true);
-
     }
 
     /**
@@ -58,8 +57,7 @@ public class form_corredor extends javax.swing.JFrame {
         btn_eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "CORREDORES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(153, 153, 153))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CORREDORES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(153, 153, 153))); // NOI18N
 
         table_corredores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -114,7 +112,12 @@ public class form_corredor extends javax.swing.JFrame {
         });
 
         combo_nacionalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "afgano", "alemán", "árabe", "argentino", "australiano", "belga", "boliviano", "brasileño", "camboyano", "canadiense", "chileno", "chino", "colombiano", "coreano", "costarricense", "cubano", "danés", "ecuatoriano", "egipcio", "salvadoreño", "escocés", "español", "estadounidense", "estonio", "etiope", "filipino", "finlandés", "francés", "galés", "griego", "guatemalteco", "haitiano", "holandés", "hondureño", "indonés", "inglés", "iraquí", "iraní", "irlandés", "israelí", "italiano", "japonés", "jordano", "laosiano", "letón", "letonés", "malayo", "marroquí", "mexicano", "nicaragüense", "noruego", "neozelandés", "panameño", "paraguayo", "peruano", "polaco", "portugués", "puertorriqueño", "dominicano", "rumano", "ruso", "sueco", "suizo", "tailandés", "taiwanes", "turco", "ucraniano", "uruguayo", "venezolano", "vietnamita" }));
-        combo_nacionalidad.setToolTipText("");
+
+        combo_nacionalidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_nacionalidadActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Equipo:");
 
@@ -185,7 +188,8 @@ public class form_corredor extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(combo_equipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
+                            .addComponent(jLabel4)
+                            .addComponent(btn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(22, 22, 22)

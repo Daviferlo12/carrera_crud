@@ -9,18 +9,21 @@
             <Property name="text" type="java.lang.String" value="Ver"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="menu_Corredores">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Corredores"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_CorredoresActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="menu_carreras">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Carrera"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_carrerasActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -93,7 +96,7 @@
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
             <BevelBorder>
               <Color PropertyName="highlightOuter" blue="ff" green="33" red="33" type="rgb"/>
-              <Color PropertyName="highlightInner" blue="66" green="0" red="33" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="99" green="0" red="66" type="rgb"/>
               <Color PropertyName="shadowOuter" blue="0" green="ff" red="cc" type="rgb"/>
               <Color PropertyName="shadowInner" blue="66" green="0" red="66" type="rgb"/>
             </BevelBorder>
@@ -112,8 +115,8 @@
             <BevelBorder>
               <Color PropertyName="highlightOuter" blue="ff" green="33" red="33" type="rgb"/>
               <Color PropertyName="highlightInner" blue="66" green="0" red="66" type="rgb"/>
-              <Color PropertyName="shadowOuter" blue="cc" green="0" red="99" type="rgb"/>
-              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="66" green="0" red="66" type="rgb"/>
             </BevelBorder>
           </Border>
         </Property>
