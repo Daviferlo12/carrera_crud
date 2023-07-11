@@ -12,7 +12,7 @@ package com.mycompany.carrera_test_1;
 public class Carrera_test_1 {
 
     public static void main(String[] args) {
-       form_corredor corredor = new form_corredor();
-       corredor.setVisible(true);
+       index inicio = new index();
+       inicio.setVisible(true);
     }
 }
