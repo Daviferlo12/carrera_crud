@@ -24,7 +24,6 @@ public class form_corredor extends javax.swing.JFrame {
     public form_corredor() {
         initComponents();
         c_combo.rellenar_combo("equipos", "marca_patro", combo_equipo);
-        c_combo.rellenar_combo_SinRepetir("race", "nombre", combo_carrera);
     }
 
     /**
@@ -48,15 +47,13 @@ public class form_corredor extends javax.swing.JFrame {
         combo_nacionalidad = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         combo_equipo = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
-        combo_carrera = new javax.swing.JComboBox<>();
         btn_guardar = new javax.swing.JButton();
         btn_modificar = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CORREDORES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 13), new java.awt.Color(153, 153, 153))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CORREDORES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(153, 153, 153))); // NOI18N
 
         table_corredores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -103,16 +100,13 @@ public class form_corredor extends javax.swing.JFrame {
         });
 
         combo_nacionalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "afgano", "alemán", "árabe", "argentino", "australiano", "belga", "boliviano", "brasileño", "camboyano", "canadiense", "chileno", "chino", "colombiano", "coreano", "costarricense", "cubano", "danés", "ecuatoriano", "egipcio", "salvadoreño", "escocés", "español", "estadounidense", "estonio", "etiope", "filipino", "finlandés", "francés", "galés", "griego", "guatemalteco", "haitiano", "holandés", "hondureño", "indonés", "inglés", "iraquí", "iraní", "irlandés", "israelí", "italiano", "japonés", "jordano", "laosiano", "letón", "letonés", "malayo", "marroquí", "mexicano", "nicaragüense", "noruego", "neozelandés", "panameño", "paraguayo", "peruano", "polaco", "portugués", "puertorriqueño", "dominicano", "rumano", "ruso", "sueco", "suizo", "tailandés", "taiwanes", "turco", "ucraniano", "uruguayo", "venezolano", "vietnamita" }));
-
-        jLabel4.setText("Equipo:");
-
-        jLabel5.setText("Carrera: ");
-
-        combo_carrera.addActionListener(new java.awt.event.ActionListener() {
+        combo_nacionalidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combo_carreraActionPerformed(evt);
+                combo_nacionalidadActionPerformed(evt);
             }
         });
+
+        jLabel4.setText("Equipo:");
 
         btn_guardar.setText("Guardar");
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -135,15 +129,13 @@ public class form_corredor extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel4))
                 .addGap(58, 58, 58)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(combo_nacionalidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(combo_equipo, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(combo_carrera, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(input_full_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(input_dorsal, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
@@ -175,11 +167,7 @@ public class form_corredor extends javax.swing.JFrame {
                             .addComponent(combo_equipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
                             .addComponent(btn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(combo_carrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(btn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -217,10 +205,6 @@ public class form_corredor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_input_dorsalActionPerformed
 
-    private void combo_carreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_carreraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_combo_carreraActionPerformed
-
     private void input_dorsalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_dorsalKeyTyped
         int key = evt.getKeyChar();
     
@@ -240,6 +224,10 @@ public class form_corredor extends javax.swing.JFrame {
         cls_corredores corredor = new cls_corredores();
         corredor.InsertarCorredor(input_dorsal, input_full_name, combo_nacionalidad, combo_equipo);
     }//GEN-LAST:event_btn_guardarActionPerformed
+
+    private void combo_nacionalidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_nacionalidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_nacionalidadActionPerformed
       
     /**
      * @param args the command line arguments
@@ -280,7 +268,6 @@ public class form_corredor extends javax.swing.JFrame {
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_guardar;
     private javax.swing.JButton btn_modificar;
-    private javax.swing.JComboBox<String> combo_carrera;
     private javax.swing.JComboBox<String> combo_equipo;
     private javax.swing.JComboBox<String> combo_nacionalidad;
     private javax.swing.JTextField input_dorsal;
@@ -289,7 +276,6 @@ public class form_corredor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
