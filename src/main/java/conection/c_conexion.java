@@ -19,7 +19,6 @@ public class c_conexion {
     String ip = "localhost";
     String port = "3306";
     
-    
     String chain = "jdbc:mysql://"+ ip + ":"+port+"/" + db;
     
     
