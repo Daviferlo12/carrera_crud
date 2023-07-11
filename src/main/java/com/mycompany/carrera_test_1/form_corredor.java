@@ -6,10 +6,7 @@ import conection.c_conexion;
 import java.sql.Connection;
 import javax.swing.JComboBox;
 
-/**
- *
- * @author davif
- */
+
 public class form_corredor extends javax.swing.JFrame {
     
     // INSTANCIA DE CONEXION
