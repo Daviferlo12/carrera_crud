@@ -60,7 +60,9 @@ public class cls_corredores {
         setDorsal(Integer.parseInt(paramDorsal.getText()));
         setNombre(paramNombre.getText());
         setNacionalidad(paramNacionalidad.getSelectedItem().toString());
-        setEquipo(combo.getSelectedIndex() + 1);
+        setEquipo(get_id_combo_db(combo, "equipos", "id_equipo", "marca_patro"));
+        //setEquipo(combo.getSelectedIndex() + 1);
+
         
         c_conexion conexion = new c_conexion();
         
@@ -188,7 +190,7 @@ public class cls_corredores {
         
         c_conexion conexion = new c_conexion();
         
-        String query = "DELETE FROM corredores c WHERE c.dorsal = ?;";
+        String query = "DELETE FROM corredores WHERE dorsal = ?;";
         
         
                 try {
@@ -204,6 +206,35 @@ public class cls_corredores {
             
         }
         
+    }
+    
+    
+    
+    public int get_id_combo_db(JComboBox p_combo, String table, String p_id, String valor){
+        int result = 0;
+        
+        c_conexion conexion = new c_conexion();
+        
+        String query = "SELECT " +p_id+ " FROM " +table+ " WHERE "+valor+" = '"+ p_combo.getSelectedItem().toString() +"';";
+        
+        Statement st;
+        
+        try {
+            
+            st = conexion.establishConnection().createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                result = rs.getInt(1);
+            }
+            System.out.println("EL ID DE "+p_combo.getSelectedItem().toString()+" ES " + result);
+            
+            return result;
+            
+        }catch(Exception e) {
+            
+            JOptionPane.showMessageDialog(null, "Error al eliminar, ERROR: "+ e.toString());
+        }
+        return 0;
     }
     
 }
