@@ -14,7 +14,7 @@ public class c_conexion {
     Connection conectar = null;
     
     String user = "root";
-    String pass = "";
+    String pass = "admin123";
     String db = "carrera";
     String ip = "localhost";
     String port = "3306";
