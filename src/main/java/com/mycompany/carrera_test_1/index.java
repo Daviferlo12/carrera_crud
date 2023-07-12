@@ -16,7 +16,6 @@ public class index extends javax.swing.JFrame {
     public index() {
         initComponents();
         
-        
         icono.setSize(190,378);
         icono.setIcon(new javax.swing.ImageIcon("C:/Users/davif/OneDrive/Documentos/NetBeansProjects/carrera_test_1/src/main/java/imagenes/logo.png"));
         
