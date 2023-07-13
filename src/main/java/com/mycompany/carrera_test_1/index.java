@@ -129,13 +129,13 @@ public class index extends javax.swing.JFrame {
 
     private void btn_carrerasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_carrerasActionPerformed
         // TODO add your handling code here:
-        form_carreras  carrera = new form_carreras ();
+        form_etapas  carrera = new form_etapas ();
         carrera.setVisible(true);
     }//GEN-LAST:event_btn_carrerasActionPerformed
 
     private void menu_carrerasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_carrerasActionPerformed
         // TODO add your handling code here:
-        form_carreras  carrera = new form_carreras ();
+        form_etapas  carrera = new form_etapas ();
         carrera.setVisible(true);
     }//GEN-LAST:event_menu_carrerasActionPerformed
 
@@ -171,6 +171,7 @@ public class index extends javax.swing.JFrame {
             public void run() {
                 new index().setVisible(true);
             }
+            
         });
     }
 
