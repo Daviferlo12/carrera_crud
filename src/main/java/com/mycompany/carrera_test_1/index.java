@@ -16,9 +16,8 @@ public class index extends javax.swing.JFrame {
     public index() {
         initComponents();
         
-        
         icono.setSize(190,378);
-        icono.setIcon(new javax.swing.ImageIcon("C:/Users/davif/OneDrive/Documentos/NetBeansProjects/carrera_test_1/src/main/java/imagenes/logo.png"));
+        icono.setIcon(new javax.swing.ImageIcon("C:/Users/Lorena/Desktop/carrera_crud/src/main/java/imagenes/logo.png"));
         
     }
 
@@ -161,13 +160,13 @@ public class index extends javax.swing.JFrame {
 
     private void btn_carrerasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_carrerasActionPerformed
         // TODO add your handling code here:
-        form_carreras  carrera = new form_carreras ();
+        form_etapas  carrera = new form_etapas ();
         carrera.setVisible(true);
     }//GEN-LAST:event_btn_carrerasActionPerformed
 
     private void menu_carrerasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_carrerasActionPerformed
         // TODO add your handling code here:
-        form_carreras  carrera = new form_carreras ();
+        form_etapas  carrera = new form_etapas ();
         carrera.setVisible(true);
     }//GEN-LAST:event_menu_carrerasActionPerformed
 
@@ -220,6 +219,7 @@ public class index extends javax.swing.JFrame {
             public void run() {
                 new index().setVisible(true);
             }
+            
         });
     }
 
