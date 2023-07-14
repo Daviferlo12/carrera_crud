@@ -221,6 +221,7 @@ public class form_corredor extends javax.swing.JFrame {
         // TODO add your handling code here:
         index inicio = new index();
         inicio.show();
+        dispose();
     }//GEN-LAST:event_btn_volverActionPerformed
 
     private void btn_eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminar1ActionPerformed

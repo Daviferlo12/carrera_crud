@@ -5,8 +5,10 @@
 package com.mycompany.carrera_test_1;
 
 import clases.cargar_combos;
+import clases.cls_etapas;
 import conection.c_conexion;
 import java.sql.Connection;
+import java.util.Date;
 
 /**
  *
@@ -22,12 +24,18 @@ public class form_etapas extends javax.swing.JFrame {
     //METODO CARGAR DATA COMBOS
     cargar_combos c_combo = new cargar_combos();
     
+    // INSTANCIA CLASE ETAPAS
+    cls_etapas etapas = new cls_etapas();
+    
+    
     
     public form_etapas() {
         initComponents();
         c_combo.rellenar_combo_SinRepetir("race", "nombre", nombre_carrera);
         c_combo.rellenar_combo("tipo_etapa", "tipo", txtTipoEtapa);
         c_combo.rellenar_combo("etapas", "tipo_puerto", txtTipoPuerto);
+        
+        etapas.mostrar_etapas(tablaEtapasE);
  
   
     }
@@ -43,7 +51,7 @@ public class form_etapas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaEtapasE = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -68,16 +76,16 @@ public class form_etapas extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         etapaNum = new javax.swing.JSpinner();
         jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnGGuardar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Etapas"));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaEtapasE.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -88,7 +96,12 @@ public class form_etapas extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        tablaEtapasE.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaEtapasEMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tablaEtapasE);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -219,17 +232,32 @@ public class form_etapas extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Guardar");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
+        btnGGuardar.setText("Guardar");
+        btnGGuardar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnGGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGGuardarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnGGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
 
-        jButton4.setText("Modificar");
-        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel4.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 90, 30));
+        btnModificar.setText("Modificar");
+        btnModificar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 90, 30));
 
-        jButton5.setText("Eliminar");
-        jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel4.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 90, 30));
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 90, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -324,6 +352,31 @@ public class form_etapas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombre_carreraActionPerformed
 
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        
+        cls_etapas etapa = new cls_etapas();
+        etapa.modificar(etapaNum, fechaInicio, txtKilometros, txtOrigen, txtDestino, tiempo, txtTipoPuerto, txtTipoEtapa);
+        etapa.mostrar_etapas(tablaEtapasE);
+        
+    }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnGGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGGuardarActionPerformed
+          cls_etapas etapa = new cls_etapas();
+          etapa.InsertarEtapa(etapaNum, fechaInicio, txtKilometros, txtOrigen, txtDestino, tiempo, txtTipoPuerto, txtTipoEtapa);
+          etapa.mostrar_etapas(tablaEtapasE);
+    }//GEN-LAST:event_btnGGuardarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        cls_etapas etapa = new cls_etapas();
+        etapa.eliminar_etapa(etapaNum);
+        etapa.mostrar_etapas(tablaEtapasE);
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void tablaEtapasEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEtapasEMouseClicked
+       cls_etapas etapa = new cls_etapas();
+       etapa.seleccionar_etapa(tablaEtapasE, etapaNum, fechaInicio, txtKilometros, txtOrigen, txtDestino, tiempo, txtTipoPuerto, txtTipoEtapa);
+    }//GEN-LAST:event_tablaEtapasEMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -361,14 +414,14 @@ public class form_etapas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnGGuardar;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JSpinner etapaNum;
     private com.toedter.calendar.JDateChooser fechaInicio;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -383,8 +436,8 @@ public class form_etapas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JComboBox<String> nombre_carrera;
+    private javax.swing.JTable tablaEtapasE;
     private javax.swing.JSpinner tiempo;
     private javax.swing.JTextField txtDestino;
     private javax.swing.JTextField txtKilometros;
